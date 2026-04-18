@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nikunj-lahoti93.github.io/pura-baby/sitemap.xml
