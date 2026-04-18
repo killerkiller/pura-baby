@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calendula Gentle Wash by pūra.baby — Tear-free, pH 5.5, COSMOS certified organic body wash for newborns and babies. Dermatologist tested.">
+  <title>Calendula Gentle Wash — pūra.baby</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --cream:#FBF7F0;--sage:#6B8F71;--sage-light:#A8C5A0;--sage-dark:#3D5C42;
+      --terra:#C4724A;--terra-light:#E8A882;--forest:#1E3A2F;
+      --warm-white:#FFFDF9;--muted:#8B7355;--border:#E8DDD0;--border2:#D4C9B8;
+      --ff-d:'Cormorant Garamond',serif;--ff-b:'DM Sans',sans-serif;
+    }
+    body{font-family:var(--ff-b);background:var(--cream);color:var(--forest);overflow-x:hidden;font-size:15px;line-height:1.6}
+    nav{background:rgba(251,247,240,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 4vw;position:sticky;top:0;z-index:200}
+    .nav-i{max-width:1260px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:var(--ff-d);font-size:1.5rem;font-weight:500;color:var(--forest);text-decoration:none}
+    .logo span{color:var(--sage)}
+    .breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--muted);letter-spacing:.03em}
+    .breadcrumb a{color:var(--muted);text-decoration:none}
+    .breadcrumb a:hover{color:var(--forest)}
+    .breadcrumb-sep{opacity:.4}
+    .nav-icons{display:flex;gap:1rem;align-items:center}
+    .icon-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:all .2s;position:relative}
+    .icon-btn:hover{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+    .cart-count{position:absolute;top:-4px;right:-4px;width:16px;height:16px;background:var(--terra);border-radius:50%;font-size:.6rem;color:white;display:flex;align-items:center;justify-content:center;font-weight:500}
+    .pdp{max-width:1260px;margin:0 auto;padding:2.5rem 4vw 5rem;display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:start}
+    .gallery{position:sticky;top:80px}
+    .gallery-main{position:relative;border-radius:24px;overflow:hidden;background:var(--warm-white);border:1px solid var(--border);aspect-ratio:1;display:flex;align-items:center;justify-content:center;cursor:zoom-in;margin-bottom:1rem}
+    .gallery-main-img{font-size:9rem;transition:transform .4s ease;user-select:none;filter:drop-shadow(0 8px 24px rgba(30,58,47,.12))}
+    .gallery-main:hover .gallery-main-img{transform:scale(1.08)}
+    .gallery-badge{position:absolute;top:16px;left:16px;background:var(--terra);color:white;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .85rem;border-radius:2rem;font-weight:500}
+    .gallery-cert{position:absolute;top:16px;right:16px;background:rgba(251,247,240,.92);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:12px;padding:.5rem .8rem;font-size:.68rem;color:var(--sage-dark);font-weight:500;letter-spacing:.05em;display:flex;align-items:center;gap:.4rem}
+    .gallery-cert::before{content:'🌿';font-size:.9rem}
+    .gallery-thumbs{display:flex;gap:.75rem}
+    .thumb{width:76px;height:76px;border-radius:14px;border:2px solid transparent;background:var(--warm-white);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.9rem;transition:all .2s;flex-shrink:0}
+    .thumb.active{border-color:var(--forest);box-shadow:0 0 0 1px var(--forest)}
+    .thumb:hover:not(.active){border-color:var(--border2)}
+    .gallery-share{display:flex;align-items:center;gap:.6rem;margin-top:1.2rem}
+    .gallery-share span{font-size:.75rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+    .share-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.8rem;transition:all .18s}
+    .share-btn:hover{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+    .prod-info{padding-top:.5rem}
+    .pi-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem;flex-wrap:wrap}
+    .pi-tag{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-dark);background:rgba(107,143,113,.12);padding:.3rem .8rem;border-radius:2rem}
+    .pi-tag.new{background:rgba(196,114,74,.1);color:var(--terra)}
+    .pi-rating{display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--muted)}
+    .pi-rating .stars{color:var(--terra);letter-spacing:.05em}
+    .pi-rating a{color:var(--sage-dark);text-decoration:underline;cursor:pointer}
+    h1.pi-name{font-family:var(--ff-d);font-size:clamp(2rem,3vw,2.9rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;color:var(--forest);margin-bottom:.6rem}
+    .pi-sub{font-size:.9rem;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:1.6rem;max-width:440px}
+    .pi-price-row{display:flex;align-items:baseline;gap:1rem;margin-bottom:.4rem}
+    .pi-price{font-family:var(--ff-d);font-size:2.2rem;font-weight:400;color:var(--forest)}
+    .pi-price-orig{font-size:1.1rem;color:var(--muted);text-decoration:line-through}
+    .pi-save{font-size:.78rem;background:rgba(107,143,113,.15);color:var(--sage-dark);padding:.25rem .65rem;border-radius:2rem;font-weight:500}
+    .pi-tax{font-size:.73rem;color:var(--muted);margin-bottom:1.8rem}
+    .sel-label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;display:flex;justify-content:space-between;align-items:center}
+    .sel-label a{color:var(--sage-dark);cursor:pointer;text-decoration:underline;text-transform:none;letter-spacing:0}
+    .sizes{display:flex;gap:.6rem;margin-bottom:1.8rem;flex-wrap:wrap}
+    .size-btn{padding:.5rem 1.2rem;border-radius:2rem;border:1.5px solid var(--border);background:transparent;font-family:var(--ff-b);font-size:.83rem;cursor:pointer;color:var(--forest);transition:all .18s;line-height:1.4}
+    .size-btn.active{border-color:var(--forest);background:var(--forest);color:var(--cream)}
+    .size-btn:hover:not(.active):not(.oos){border-color:var(--forest)}
+    .size-btn.oos{opacity:.4;cursor:not-allowed;text-decoration:line-through}
+    .variants{display:flex;gap:.6rem;margin-bottom:2rem;flex-wrap:wrap}
+    .var-btn{display:flex;align-items:center;gap:.55rem;padding:.45rem 1rem;border-radius:2rem;border:1.5px solid var(--border);background:transparent;font-family:var(--ff-b);font-size:.8rem;cursor:pointer;color:var(--muted);transition:all .18s}
+    .var-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+    .var-btn.active{border-color:var(--forest);color:var(--forest)}
+    .var-btn:hover:not(.active){border-color:var(--border2);color:var(--forest)}
+    .cta-row{display:grid;grid-template-columns:auto 1fr;gap:.8rem;margin-bottom:1rem}
+    .qty-ctrl{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:2rem;overflow:hidden}
+    .qty-btn{width:40px;height:48px;border:none;background:transparent;font-size:1.1rem;cursor:pointer;color:var(--forest);transition:background .15s}
+    .qty-btn:hover{background:var(--border)}
+    .qty-val{width:36px;text-align:center;font-size:.92rem;font-weight:500;color:var(--forest)}
+    .btn-atc{background:var(--forest);color:var(--cream);border:none;height:48px;border-radius:2rem;font-family:var(--ff-b);font-size:.9rem;letter-spacing:.04em;cursor:pointer;transition:all .22s;display:flex;align-items:center;justify-content:center;gap:.5rem;font-weight:500}
+    .btn-atc:hover{background:var(--sage-dark);transform:translateY(-1px)}
+    .btn-atc.added{background:var(--sage)}
+    .btn-sub{width:100%;height:48px;border-radius:2rem;border:1.5px solid var(--forest);background:transparent;font-family:var(--ff-b);font-size:.88rem;letter-spacing:.03em;cursor:pointer;color:var(--forest);transition:all .22s;display:flex;align-items:center;justify-content:center;gap:.45rem;margin-bottom:1.6rem}
+    .btn-sub:hover{background:rgba(30,58,47,.05)}
+    .btn-sub .sub-save{font-size:.72rem;background:rgba(196,114,74,.12);color:var(--terra);padding:.15rem .55rem;border-radius:2rem;margin-left:.2rem}
+    .trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;padding:1.4rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:2rem}
+    .trust-item{display:flex;flex-direction:column;align-items:center;gap:.35rem;text-align:center}
+    .trust-icon{font-size:1.3rem}
+    .trust-lbl{font-size:.68rem;color:var(--muted);letter-spacing:.03em;line-height:1.3}
+    .delivery-box{background:rgba(107,143,113,.07);border:1px solid rgba(107,143,113,.2);border-radius:14px;padding:1rem 1.2rem;display:flex;gap:1rem;align-items:flex-start;margin-bottom:2rem}
+    .delivery-box .d-icon{font-size:1.4rem;flex-shrink:0}
+    .delivery-box h5{font-size:.82rem;font-weight:500;color:var(--forest);margin-bottom:.15rem}
+    .delivery-box p{font-size:.75rem;color:var(--muted);line-height:1.5}
+    .pincode-row{display:flex;gap:.5rem;margin-top:.5rem}
+    .pin-input{flex:1;height:32px;border:1px solid var(--border2);border-radius:2rem;padding:0 1rem;font-family:var(--ff-b);font-size:.78rem;outline:none;background:var(--cream)}
+    .pin-input:focus{border-color:var(--sage)}
+    .pin-btn{height:32px;padding:0 1rem;background:var(--forest);color:var(--cream);border:none;border-radius:2rem;font-size:.75rem;cursor:pointer}
+    .tabs-section{max-width:1260px;margin:0 auto;padding:0 4vw 5rem}
+    .tabs-nav{display:flex;border-bottom:1px solid var(--border);margin-bottom:2.5rem;overflow-x:auto}
+    .tab-btn{padding:.9rem 1.6rem;border:none;background:transparent;font-family:var(--ff-b);font-size:.83rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:all .18s}
+    .tab-btn.active{color:var(--forest);border-bottom-color:var(--forest)}
+    .tab-btn:hover:not(.active){color:var(--forest)}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block;animation:fadeUp .3s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .htu-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:1rem}
+    .htu-step{text-align:center;padding:1.8rem 1.2rem;background:var(--warm-white);border:1px solid var(--border);border-radius:20px}
+    .htu-num{font-family:var(--ff-d);font-size:3.5rem;font-weight:300;color:rgba(107,143,113,.2);line-height:1;margin-bottom:.5rem}
+    .htu-icon{font-size:1.8rem;margin-bottom:.8rem}
+    .htu-step h4{font-size:.88rem;font-weight:500;color:var(--forest);margin-bottom:.4rem}
+    .htu-step p{font-size:.77rem;color:var(--muted);line-height:1.6}
+    .ing-header{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
+    .ing-intro h3{font-family:var(--ff-d);font-size:1.6rem;font-weight:400;color:var(--forest);margin-bottom:.4rem}
+    .ing-intro p{font-size:.83rem;color:var(--muted);line-height:1.65;max-width:480px}
+    .ing-legend{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+    .leg-item{display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:var(--muted)}
+    .leg-dot{width:8px;height:8px;border-radius:50%}
+    .leg-dot.safe{background:#6B8F71}.leg-dot.caution{background:#E8A882}.leg-dot.star{background:#C4724A}
+    .ing-list{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+    .ing-item{background:var(--warm-white);border:1px solid var(--border);border-radius:14px;padding:1rem 1.2rem;display:flex;align-items:flex-start;gap:.9rem;cursor:pointer;transition:all .18s}
+    .ing-item:hover{border-color:var(--border2);box-shadow:0 4px 16px rgba(30,58,47,.06)}
+    .ing-item.expanded{border-color:var(--sage);background:rgba(107,143,113,.04)}
+    .ing-badge{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:.35rem}
+    .ing-badge.safe{background:#6B8F71}.ing-badge.caution{background:#E8A882}.ing-badge.star{background:var(--terra)}
+    .ing-text h5{font-size:.83rem;font-weight:500;color:var(--forest);margin-bottom:.1rem}
+    .ing-text .inci{font-size:.7rem;color:var(--muted);font-style:italic;margin-bottom:.2rem}
+    .ing-detail{font-size:.75rem;color:var(--sage-dark);line-height:1.55;margin-top:.5rem;display:none}
+    .ing-item.expanded .ing-detail{display:block}
+    .ing-chevron{margin-left:auto;font-size:.7rem;color:var(--muted);flex-shrink:0;transition:transform .2s;padding-top:.3rem}
+    .ing-item.expanded .ing-chevron{transform:rotate(180deg)}
+    .ing-full-list{margin-top:1.5rem;background:var(--warm-white);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.5rem}
+    .ing-full-list h5{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+    .ing-full-list p{font-size:.77rem;color:var(--muted);line-height:1.8}
+    .reviews-top{display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:start;margin-bottom:2.5rem}
+    .rating-big{text-align:center;background:var(--warm-white);border:1px solid var(--border);border-radius:20px;padding:2rem 2.5rem}
+    .rating-num{font-family:var(--ff-d);font-size:4.5rem;font-weight:300;color:var(--forest);line-height:1}
+    .rating-stars{color:var(--terra);font-size:1.1rem;letter-spacing:.1em;margin:.3rem 0}
+    .rating-count{font-size:.75rem;color:var(--muted)}
+    .rating-bars{display:flex;flex-direction:column;gap:.6rem;padding-top:.3rem}
+    .rbar-row{display:flex;align-items:center;gap:.8rem}
+    .rbar-lbl{font-size:.78rem;color:var(--muted);width:32px;flex-shrink:0}
+    .rbar-track{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+    .rbar-fill{height:100%;background:var(--terra);border-radius:3px}
+    .rbar-pct{font-size:.75rem;color:var(--muted);width:32px;text-align:right;flex-shrink:0}
+    .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+    .review-card{background:var(--warm-white);border:1px solid var(--border);border-radius:18px;padding:1.5rem}
+    .rc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem}
+    .rc-author{display:flex;align-items:center;gap:.7rem}
+    .rc-avatar{width:36px;height:36px;border-radius:50%;background:rgba(107,143,113,.2);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+    .rc-name{font-size:.83rem;font-weight:500;color:var(--forest)}
+    .rc-meta{font-size:.72rem;color:var(--muted)}
+    .rc-verified{font-size:.68rem;color:var(--sage-dark);background:rgba(107,143,113,.1);padding:.15rem .55rem;border-radius:2rem}
+    .rc-stars{color:var(--terra);font-size:.8rem;margin-bottom:.5rem}
+    .rc-title{font-weight:500;font-size:.88rem;color:var(--forest);margin-bottom:.35rem}
+    .rc-body{font-size:.8rem;color:var(--muted);line-height:1.65;font-weight:300}
+    .rc-helpful{margin-top:.8rem;font-size:.73rem;color:var(--muted);display:flex;align-items:center;gap:.6rem}
+    .rc-helpful button{border:1px solid var(--border);background:transparent;border-radius:2rem;padding:.2rem .6rem;font-size:.7rem;cursor:pointer;color:var(--muted);transition:all .15s}
+    .rc-helpful button:hover{border-color:var(--forest);color:var(--forest)}
+    .related-section{background:var(--warm-white);border-top:1px solid var(--border);padding:4rem 4vw}
+    .related-inner{max-width:1260px;margin:0 auto}
+    .related-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem}
+    .sec-eyebrow{font-size:.73rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-dark);display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem}
+    .sec-eyebrow::before{content:'';width:22px;height:1.5px;background:var(--sage)}
+    .sec-title{font-family:var(--ff-d);font-size:1.9rem;font-weight:400;color:var(--forest)}
+    .rel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+    .rel-card{background:var(--cream);border:1px solid var(--border);border-radius:18px;overflow:hidden;cursor:pointer;transition:all .22s;text-decoration:none;display:block;color:inherit}
+    .rel-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(30,58,47,.08)}
+    .rel-img{height:150px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+    .rel-body{padding:1rem 1.1rem 1.3rem}
+    .rel-tag{font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:.35rem}
+    .rel-name{font-family:var(--ff-d);font-size:1.1rem;font-weight:400;color:var(--forest);margin-bottom:.2rem;line-height:1.2}
+    .rel-price{font-size:.88rem;font-weight:500;color:var(--forest)}
+    .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--warm-white);border-top:1px solid var(--border);padding:.9rem 4vw;display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:150;transform:translateY(100%);transition:transform .3s ease;box-shadow:0 -8px 32px rgba(30,58,47,.08)}
+    .sticky-bar.visible{transform:translateY(0)}
+    .sticky-prod{display:flex;align-items:center;gap:1rem}
+    .sticky-icon{width:44px;height:44px;border-radius:10px;background:rgba(168,197,160,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+    .sticky-name{font-size:.88rem;font-weight:500;color:var(--forest)}
+    .sticky-price{font-size:.8rem;color:var(--muted)}
+    .sticky-cta{background:var(--forest);color:var(--cream);border:none;padding:.7rem 2rem;border-radius:2rem;font-family:var(--ff-b);font-size:.85rem;cursor:pointer;white-space:nowrap;transition:all .2s}
+    .sticky-cta:hover{background:var(--sage-dark)}
+    footer{background:var(--forest);padding:3rem 4vw 1.5rem;color:rgba(251,247,240,.7)}
+    .footer-bottom{max-width:1260px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;flex-wrap:wrap;gap:1rem}
+    .footer-bottom a{color:rgba(251,247,240,.4);text-decoration:none}
+    @media(max-width:900px){
+      .pdp{grid-template-columns:1fr;gap:2rem}
+      .gallery{position:static}
+      .htu-steps{grid-template-columns:repeat(2,1fr)}
+      .ing-list{grid-template-columns:1fr}
+      .reviews-top{grid-template-columns:1fr}
+      .reviews-grid{grid-template-columns:1fr}
+      .rel-grid{grid-template-columns:repeat(2,1fr)}
+      .trust-row{grid-template-columns:repeat(2,1fr)}
+      .breadcrumb{display:none}
+    }
+    @media(max-width:540px){
+      .htu-steps{grid-template-columns:1fr}
+      .rel-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-i">
+    <a href="index.html" class="logo">pūra<span>.</span>baby</a>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="breadcrumb-sep">/</span>
+      <a href="#">Baby skincare</a><span class="breadcrumb-sep">/</span>
+      <span style="color:var(--forest)">Calendula Gentle Wash</span>
+    </div>
+    <div class="nav-icons">
+      <button class="icon-btn">♡</button>
+      <button class="icon-btn">🛒<span class="cart-count" id="cart-count">0</span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="pdp">
+  <!-- GALLERY -->
+  <div class="gallery">
+    <div class="gallery-main">
+      <span class="gallery-badge">Bestseller</span>
+      <span class="gallery-cert">COSMOS Organic</span>
+      <div class="gallery-main-img" id="main-img">🌼</div>
+    </div>
+    <div class="gallery-thumbs">
+      <div class="thumb active" onclick="setImg(this,'🌼')">🌼</div>
+      <div class="thumb" onclick="setImg(this,'🧴')">🧴</div>
+      <div class="thumb" onclick="setImg(this,'🫧')">🫧</div>
+      <div class="thumb" onclick="setImg(this,'📦')">📦</div>
+      <div class="thumb" onclick="setImg(this,'🏵')">🏵</div>
+    </div>
+    <div class="gallery-share">
+      <span>Share</span>
+      <button class="share-btn">𝕏</button>
+      <button class="share-btn">f</button>
+      <button class="share-btn">📷</button>
+      <button class="share-btn">🔗</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT INFO -->
+  <div class="prod-info">
+    <div class="pi-eyebrow">
+      <span class="pi-tag">Body wash</span>
+      <span class="pi-tag new">New formula</span>
+      <div class="pi-rating">
+        <span class="stars">★★★★★</span>
+        4.9 · <a onclick="document.querySelector('[data-tab=reviews]').click()">284 reviews</a>
+      </div>
+    </div>
+
+    <h1 class="pi-name">Calendula<br>Gentle Wash</h1>
+    <p class="pi-sub">Tear-free daily body wash enriched with organic calendula, chamomile extract &amp; oat milk. pH 5.5 — perfectly balanced for newborn skin. Lathers softly, rinses clean, leaves skin nourished.</p>
+
+    <div class="pi-price-row">
+      <div class="pi-price" id="pi-price">₹ 449</div>
+      <div class="pi-price-orig">₹ 549</div>
+      <div class="pi-save">Save 18%</div>
+    </div>
+    <div class="pi-tax">Inclusive of all taxes &nbsp;·&nbsp; Free shipping above ₹499</div>
+
+    <div class="sel-label"><span>Size</span><a>Size guide</a></div>
+    <div class="sizes">
+      <button class="size-btn" onclick="setSize(this,'₹ 299')">100 ml<br><small style="font-size:.65rem;opacity:.6">Trial</small></button>
+      <button class="size-btn active" onclick="setSize(this,'₹ 449')">200 ml<br><small style="font-size:.65rem;opacity:.6">Popular</small></button>
+      <button class="size-btn" onclick="setSize(this,'₹ 749')">400 ml<br><small style="font-size:.65rem;opacity:.6">Value</small></button>
+      <button class="size-btn oos" title="Out of stock">750 ml</button>
+    </div>
+
+    <div class="sel-label"><span>Scent variant</span></div>
+    <div class="variants">
+      <button class="var-btn active" onclick="setVariant(this)"><span class="var-dot" style="background:#F4E0B0"></span>Calendula &amp; Oat</button>
+      <button class="var-btn" onclick="setVariant(this)"><span class="var-dot" style="background:#B7D4B8"></span>Chamomile &amp; Aloe</button>
+      <button class="var-btn" onclick="setVariant(this)"><span class="var-dot" style="background:#F2C0A8"></span>Rose &amp; Ashwagandha</button>
+    </div>
+
+    <div class="cta-row">
+      <div class="qty-ctrl">
+        <button class="qty-btn" onclick="changeQty(-1)">−</button>
+        <span class="qty-val" id="qty-val">1</span>
+        <button class="qty-btn" onclick="changeQty(1)">+</button>
+      </div>
+      <button class="btn-atc" id="atc-btn" onclick="addToCart()">
+        <span id="atc-text">Add to cart</span>
+      </button>
+    </div>
+
+    <button class="btn-sub">
+      🔄 Subscribe &amp; save 15% every delivery
+      <span class="sub-save">Save ₹67</span>
+    </button>
+
+    <div class="trust-row">
+      <div class="trust-item"><div class="trust-icon">🌿</div><div class="trust-lbl">100% Organic certified</div></div>
+      <div class="trust-item"><div class="trust-icon">🧪</div><div class="trust-lbl">Dermatologist tested</div></div>
+      <div class="trust-item"><div class="trust-icon">🚚</div><div class="trust-lbl">Free delivery by Tue</div></div>
+      <div class="trust-item"><div class="trust-icon">↩️</div><div class="trust-lbl">30-day easy returns</div></div>
+    </div>
+
+    <div class="delivery-box">
+      <div class="d-icon">📦</div>
+      <div>
+        <h5>Check delivery date</h5>
+        <p>Enter your pincode to see estimated delivery and pickup options.</p>
+        <div class="pincode-row">
+          <input class="pin-input" placeholder="Enter pincode" maxlength="6" id="pin-inp" oninput="this.value=this.value.replace(/\D/g,'')">
+          <button class="pin-btn" onclick="checkPin()">Check</button>
+        </div>
+        <div id="pin-result" style="font-size:.75rem;color:var(--sage-dark);margin-top:.4rem;display:none"></div>
+      </div>
+    </div>
+
+    <div id="accordions"></div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs-section">
+  <div class="tabs-nav">
+    <button class="tab-btn active" data-tab="howtouse" onclick="setTab('howtouse',this)">How to use</button>
+    <button class="tab-btn" data-tab="ingredients" onclick="setTab('ingredients',this)">Ingredient decoder</button>
+    <button class="tab-btn" data-tab="reviews" onclick="setTab('reviews',this)">Reviews (284)</button>
+  </div>
+
+  <div class="tab-panel active" id="tab-howtouse">
+    <div class="htu-steps">
+      <div class="htu-step"><div class="htu-num">01</div><div class="htu-icon">🌡️</div><h4>Warm the water</h4><p>Use lukewarm water (37–38°C). Never hot. Baby's skin is thinner and more heat-sensitive than adult skin.</p></div>
+      <div class="htu-step"><div class="htu-num">02</div><div class="htu-icon">💧</div><h4>Dispense &amp; lather</h4><p>Pump 1–2 presses onto your palm. Work into a gentle lather before applying — avoid direct dispensing on baby's skin.</p></div>
+      <div class="htu-step"><div class="htu-num">03</div><div class="htu-icon">🤲</div><h4>Wash gently</h4><p>Using circular motions, cleanse body starting from neck down. Use a separate damp cotton pad for the face.</p></div>
+      <div class="htu-step"><div class="htu-num">04</div><div class="htu-icon">✨</div><h4>Pat dry &amp; moisturise</h4><p>Pat (never rub) dry with a soft towel. Apply pūra Moringa Lotion within 3 minutes to lock in moisture.</p></div>
+    </div>
+    <div style="margin-top:2rem;background:rgba(107,143,113,.06);border:1px solid rgba(107,143,113,.2);border-radius:14px;padding:1.2rem 1.5rem;display:flex;gap:1rem;align-items:flex-start">
+      <span style="font-size:1.2rem;flex-shrink:0">💡</span>
+      <div>
+        <div style="font-size:.83rem;font-weight:500;color:var(--forest);margin-bottom:.25rem">Pro tip from Dr. Kavitha, Paediatrician</div>
+        <div style="font-size:.78rem;color:var(--muted);line-height:1.65">Limit bath time to 5–10 minutes for babies under 12 months. Prolonged water exposure disrupts the skin's natural lipid barrier, especially in winter months when indoor heating is on.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-ingredients">
+    <div class="ing-header">
+      <div class="ing-intro">
+        <h3>Every ingredient, <em style="font-style:italic;color:var(--terra)">explained</em></h3>
+        <p>We believe you deserve to know exactly what goes on your baby's skin. Click any ingredient to learn what it does and why we chose it.</p>
+      </div>
+      <div class="ing-legend">
+        <div class="leg-item"><div class="leg-dot star"></div> Hero ingredient</div>
+        <div class="leg-item"><div class="leg-dot safe"></div> Safe carrier</div>
+        <div class="leg-item"><div class="leg-dot caution"></div> Preservative</div>
+      </div>
+    </div>
+    <div class="ing-list" id="ing-list"></div>
+    <div class="ing-full-list">
+      <h5>Full INCI list</h5>
+      <p>Aqua, Calendula Officinalis Flower Extract*, Avena Sativa (Oat) Kernel Flour*, Chamomilla Recutita Flower Extract*, Coco-Glucoside, Glycerin*, Sodium Lauroyl Sarcosinate, Panthenol, Tocopherol, Xanthan Gum, Citric Acid, Benzyl Alcohol, Dehydroacetic Acid</p>
+      <p style="margin-top:.5rem;font-size:.7rem;color:rgba(139,115,85,.5)">* = Certified organic ingredient</p>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-reviews">
+    <div class="reviews-top">
+      <div class="rating-big">
+        <div class="rating-num">4.9</div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-count">284 verified reviews</div>
+      </div>
+      <div style="flex:1">
+        <div class="rating-bars">
+          <div class="rbar-row"><span class="rbar-lbl">5 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:89%"></div></div><span class="rbar-pct">89%</span></div>
+          <div class="rbar-row"><span class="rbar-lbl">4 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:8%"></div></div><span class="rbar-pct">8%</span></div>
+          <div class="rbar-row"><span class="rbar-lbl">3 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:2%"></div></div><span class="rbar-pct">2%</span></div>
+          <div class="rbar-row"><span class="rbar-lbl">2 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:1%"></div></div><span class="rbar-pct">1%</span></div>
+          <div class="rbar-row"><span class="rbar-lbl">1 ★</span><div class="rbar-track"><div class="rbar-fill" style="width:0%"></div></div><span class="rbar-pct">0%</span></div>
+        </div>
+        <div style="margin-top:1.2rem;display:flex;flex-wrap:wrap;gap:.5rem">
+          <span style="font-size:.72rem;background:rgba(107,143,113,.1);color:var(--sage-dark);padding:.25rem .75rem;border-radius:2rem">Gentle on skin (218)</span>
+          <span style="font-size:.72rem;background:rgba(107,143,113,.1);color:var(--sage-dark);padding:.25rem .75rem;border-radius:2rem">No irritation (197)</span>
+          <span style="font-size:.72rem;background:rgba(107,143,113,.1);color:var(--sage-dark);padding:.25rem .75rem;border-radius:2rem">Great lather (156)</span>
+          <span style="font-size:.72rem;background:rgba(107,143,113,.1);color:var(--sage-dark);padding:.25rem .75rem;border-radius:2rem">Nice fragrance (143)</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="rc-top"><div class="rc-author"><div class="rc-avatar">👩</div><div><div class="rc-name">Priya Sharma</div><div class="rc-meta">Mumbai · 3 months ago</div></div></div><span class="rc-verified">✓ Verified</span></div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-title">Cleared my daughter's eczema patches</div>
+        <div class="rc-body">We switched after our paediatrician recommended pūra. Within 10 days the dry patches on her cheeks were visibly better. The calendula scent is subtle — not overpowering like other brands.</div>
+        <div class="rc-helpful">Helpful? <button>👍 42</button> <button>👎 2</button></div>
+      </div>
+      <div class="review-card">
+        <div class="rc-top"><div class="rc-author"><div class="rc-avatar">👨</div><div><div class="rc-name">Rahul Mehta</div><div class="rc-meta">Bengaluru · 1 month ago</div></div></div><span class="rc-verified">✓ Verified</span></div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-title">The ingredient decoder sold me</div>
+        <div class="rc-body">As an engineer, I read every label. The transparency on this website is unmatched. I knew exactly why each ingredient was there before buying. My son (4 months) loves bath time now.</div>
+        <div class="rc-helpful">Helpful? <button>👍 38</button> <button>👎 1</button></div>
+      </div>
+      <div class="review-card">
+        <div class="rc-top"><div class="rc-author"><div class="rc-avatar">👩‍⚕️</div><div><div class="rc-name">Dr. Kavitha Nair</div><div class="rc-meta">Kochi · 2 months ago</div></div></div><span class="rc-verified">✓ Verified</span></div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-title">Recommend to all my patients</div>
+        <div class="rc-body">pH 5.5 is exactly right for neonatal skin. No SLS, no artificial fragrance, no phthalates. I've been recommending pūra for 8 months and have had zero adverse reaction reports.</div>
+        <div class="rc-helpful">Helpful? <button>👍 91</button> <button>👎 0</button></div>
+      </div>
+      <div class="review-card">
+        <div class="rc-top"><div class="rc-author"><div class="rc-avatar">👩</div><div><div class="rc-name">Ananya Krishnan</div><div class="rc-meta">Chennai · 5 days ago</div></div></div><span class="rc-verified">✓ Verified</span></div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-title">Finally a wash that works in humidity</div>
+        <div class="rc-body">Chennai summers are brutal. Most baby washes feel heavy and sticky. This one rinses off completely clean. Subscribed to the 400ml. The packaging is also beautiful.</div>
+        <div class="rc-helpful">Helpful? <button>👍 27</button> <button>👎 0</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="related-section">
+  <div class="related-inner">
+    <div class="related-header">
+      <div>
+        <div class="sec-eyebrow">Complete the routine</div>
+        <div class="sec-title">Pair it with</div>
+      </div>
+      <a href="#" style="border:1.5px solid var(--forest);color:var(--forest);padding:.6rem 1.4rem;border-radius:2rem;background:transparent;font-family:var(--ff-b);font-size:.8rem;cursor:pointer;text-decoration:none;display:inline-block">View all</a>
+    </div>
+    <div class="rel-grid">
+      <a href="#" class="rel-card"><div class="rel-img" style="background:rgba(232,168,130,.15)">🌱</div><div class="rel-body"><div class="rel-tag">Step 2 · Moisturise</div><div class="rel-name">Moringa Daily Lotion</div><div class="rel-price">₹ 549</div></div></a>
+      <a href="#" class="rel-card"><div class="rel-img" style="background:rgba(251,220,150,.2)">☀️</div><div class="rel-body"><div class="rel-tag">Step 3 · Protect</div><div class="rel-name">Mineral Sun Shield SPF 50</div><div class="rel-price">₹ 699</div></div></a>
+      <a href="#" class="rel-card"><div class="rel-img" style="background:rgba(168,197,160,.2)">🎁</div><div class="rel-body"><div class="rel-tag">Bundle · Save 20%</div><div class="rel-name">Newborn Starter Kit</div><div class="rel-price">₹ 1,099</div></div></a>
+      <a href="#" class="rel-card"><div class="rel-img" style="background:rgba(196,114,74,.1)">🫙</div><div class="rel-body"><div class="rel-tag">Add-on · Bedtime</div><div class="rel-name">Soothing Massage Oil</div><div class="rel-price">₹ 399</div></div></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--cream)">pūra<span style="color:#A8C5A0">.</span>baby</div>
+    <div>© 2025 pūra baby. All rights reserved.</div>
+    <div style="display:flex;gap:1.5rem">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="index.html" style="color:rgba(251,247,240,.4);text-decoration:none;font-size:.75rem">← Back to home</a>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-bar" id="sticky-bar">
+  <div class="sticky-prod">
+    <div class="sticky-icon">🌼</div>
+    <div>
+      <div class="sticky-name">Calendula Gentle Wash · 200ml</div>
+      <div class="sticky-price">₹ 449 &nbsp;<span style="text-decoration:line-through;opacity:.5">₹ 549</span></div>
+    </div>
+  </div>
+  <button class="sticky-cta" onclick="addToCart()">Add to cart</button>
+</div>
+
+<script>
+  function setImg(el,img){document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.getElementById('main-img').textContent=img}
+  function setSize(el,price){document.querySelectorAll('.size-btn:not(.oos)').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.getElementById('pi-price').textContent=price}
+  function setVariant(el){document.querySelectorAll('.var-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active')}
+  let qty=1;
+  function changeQty(d){qty=Math.max(1,Math.min(10,qty+d));document.getElementById('qty-val').textContent=qty}
+  let cartCount=0;
+  function addToCart(){cartCount+=qty;document.getElementById('cart-count').textContent=cartCount;const btn=document.getElementById('atc-btn');const txt=document.getElementById('atc-text');btn.classList.add('added');txt.textContent='✓ Added to cart';setTimeout(()=>{btn.classList.remove('added');txt.textContent='Add to cart'},1800)}
+  function setTab(id,el){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));el.classList.add('active');document.getElementById('tab-'+id).classList.add('active')}
+  function checkPin(){const v=document.getElementById('pin-inp').value;const r=document.getElementById('pin-result');if(v.length===6){r.style.display='block';r.textContent='✓ Delivery by Tuesday, 22 April — Free'}}
+  window.addEventListener('scroll',()=>{document.getElementById('sticky-bar').classList.toggle('visible',window.scrollY>400)},{passive:true});
+  const ingredients=[
+    {name:'Calendula Extract',inci:'Calendula Officinalis Flower Extract*',type:'star',detail:'Our hero ingredient. Harvested from certified organic farms in Uttarakhand. Rich in flavonoids and carotenoids with clinically proven anti-inflammatory action. Ideal for soothing cradle cap, nappy rash, and dry patches.'},
+    {name:'Oat Milk',inci:'Avena Sativa Kernel Flour*',type:'star',detail:'Colloidal oatmeal has been used to soothe eczema-prone skin for over a century. Creates a protective film on skin, reducing transepidermal water loss (TEWL) by up to 40%.'},
+    {name:'Chamomile Extract',inci:'Chamomilla Recutita Flower Extract*',type:'star',detail:'German chamomile contains bisabolol and apigenin — both proven to reduce redness and skin reactivity. Works synergistically with calendula to calm irritated skin.'},
+    {name:'Coco-Glucoside',inci:'Coco-Glucoside',type:'safe',detail:'A 100% natural, biodegradable surfactant derived from coconut oil and glucose. Rated A on EWG. Creates a gentle lather without stripping the skin\'s acid mantle.'},
+    {name:'Vegetable Glycerin',inci:'Glycerin*',type:'safe',detail:'Organic humectant derived from palm-free vegetable oils. Draws moisture into the skin and holds it there. Helps maintain the skin barrier for newborns.'},
+    {name:'Panthenol (B5)',inci:'Panthenol',type:'safe',detail:'Provitamin B5. Converts to pantothenic acid in the skin, essential for tissue repair. Clinically proven safe for use from birth.'},
+    {name:'Vitamin E',inci:'Tocopherol',type:'safe',detail:'Natural antioxidant that protects skin cell membranes from free radical damage. Also acts as a natural preservative booster.'},
+    {name:'Benzyl Alcohol',inci:'Benzyl Alcohol / Dehydroacetic Acid',type:'caution',detail:'A preservative system approved for natural cosmetics. Used at 0.5% — well within the 1% maximum safe limit for baby products set by the EU.'},
+  ];
+  const ingList=document.getElementById('ing-list');
+  ingredients.forEach(ing=>{const el=document.createElement('div');el.className='ing-item';el.innerHTML=`<div class="ing-badge ${ing.type}"></div><div class="ing-text"><h5>${ing.name}</h5><div class="inci">${ing.inci}</div><div class="ing-detail">${ing.detail}</div></div><div class="ing-chevron">▼</div>`;el.addEventListener('click',()=>el.classList.toggle('expanded'));ingList.appendChild(el)});
+  const accData=[
+    {title:'What ages is this suitable for?',body:'Calendula Gentle Wash is formulated for babies from birth onwards. The gentle, pH-balanced formula is safe for premature skin under paediatric guidance. The tear-free formula is suitable right through the toddler years.'},
+    {title:'Is it safe for babies with eczema?',body:'Yes. The formula is free from SLS, SLES, parabens, artificial fragrances, and phthalates — the most common eczema triggers. 94% of parents in our clinical trial reported visible improvement in eczema symptoms within 3 weeks.'},
+    {title:'Packaging & sustainability',body:'Our bottles are made from 40% post-consumer recycled (PCR) plastic. The pump is recyclable curbside. We are on track for 100% PCR packaging by Q3 2026. Refill pouches available, saving 60% packaging weight.'},
+  ];
+  const acc=document.getElementById('accordions');
+  accData.forEach(item=>{const d=document.createElement('div');d.style.cssText='border-top:1px solid var(--border);padding:.95rem 0';const header=document.createElement('div');header.style.cssText='display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:.88rem;font-weight:500;color:var(--forest)';header.innerHTML=`<span>${item.title}</span><span class="ac" style="font-size:.7rem;color:var(--muted)">▼</span>`;const body=document.createElement('div');body.style.cssText='display:none;font-size:.8rem;color:var(--muted);line-height:1.7;padding-top:.6rem;font-weight:300';body.textContent=item.body;header.addEventListener('click',()=>{const open=body.style.display==='block';body.style.display=open?'none':'block';header.querySelector('.ac').textContent=open?'▼':'▲'});d.appendChild(header);d.appendChild(body);acc.appendChild(d)});
+</script>
+</body>
+</html>
